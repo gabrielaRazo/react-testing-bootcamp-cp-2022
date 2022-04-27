@@ -1,12 +1,12 @@
-import {render, screen, fireEvent, act} from '@testing-library/react'
-import Dashboard from './Dashboard'
+import {render, screen, fireEvent} from '@testing-library/react'
 import moment from 'moment';
+import { Dashboard } from '.';
 
-//const setup = () => render(<Dashboard />)
+const setup = () => render(<Dashboard />)
 
-describe('Dasboard', () => {
+describe('Dashboard', () => {
     it('the app should show the Picture of the Day', async () => {
-        render(<Dashboard />)
+        setup()
         const dayOfToday = moment(new Date()).format("YYYY-MM-DD");
         const imgResult = await screen.findByRole('img', {altText: dayOfToday})
         expect(imgResult).toBeInTheDocument();
@@ -21,10 +21,7 @@ describe('Dasboard', () => {
         expect(input.value).toMatch(regex)
         expect(imgResult).toBeInTheDocument();
     })
-    it('the app should show a message: "There was an error, please try again." when the app fetches the API, and there is an unexpected error', async () => {
-        //setup()
-       
-    })
+    
     it('the app should show a message from the API response when the user selects an invalid date value ', async () => {
         setup()
         const firstMsgError = screen.queryByText(/Date must be between Jun 16, 1995 and Apr 27, 2022./i)

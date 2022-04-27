@@ -3,7 +3,7 @@ import moment from 'moment';
 import '../../stylesheets/dashboard.css'
 import {Col, Spin } from 'antd';
 
-const Dashboard = () => {
+export const Dashboard = () => {
     const [pictureDayInfo, setPictureDayInfo] = useState([])
     const [fetchingApi, setFetchingApi] = useState(true);
     const [erroMsg, setErrorMsg] = useState(false);
@@ -62,5 +62,3 @@ const Dashboard = () => {
       </>
     )
   }
-
-  export default Dashboard;
