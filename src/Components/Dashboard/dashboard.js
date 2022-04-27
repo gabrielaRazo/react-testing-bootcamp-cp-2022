@@ -17,6 +17,7 @@ export const Dashboard = () => {
             const apiKey = 'wOjD8BmGH4ZViJyv2OpeZlKfSaA24XkEcvmyipkF';
             let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&start_date=${date}&end_date=${date}`)
             response = await response.json();
+            console.log(response)
             setPictureDayInfo(response)
             setFetchingApi(false)
             setErrorMsg(false)
