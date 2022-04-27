@@ -21,7 +21,7 @@ describe('Dashboard', () => {
         expect(input.value).toMatch(regex)
         expect(imgResult).toBeInTheDocument();
     })
-    
+
     it('the app should show a message from the API response when the user selects an invalid date value ', async () => {
         setup()
         const firstMsgError = screen.queryByText(/Date must be between Jun 16, 1995 and Apr 27, 2022./i)
