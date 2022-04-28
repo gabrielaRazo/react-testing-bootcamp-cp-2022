@@ -1,9 +1,31 @@
 .container-header{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px 0px;
+    box-shadow: rgba(0, 0, 0, 0.279) 0px 2px 4px 0px;
     height: 60px;
 }
 
 .txt-title-header{
     font-weight: 200;
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+
+.txt-link{
+    font-weight: 300;
+    font-size: 1rem;
+    color: black;
+}
+
+.icon-linkedin svg{
+    width: 21px;
+    height: 21px;
+    margin-top: 0.5em;
+    color: #0a66c2;
+}
+
+.top-space-header{
+    padding-top: 0.5em;
+}
+
+.txt-footer{
+    font-size: 1em;
+    font-weight: 200;
 }

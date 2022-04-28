@@ -1,6 +1,6 @@
 .img-dashboard{
-    width:500px;
-    height: 300px;
+    width:100%;
+    border-radius: 5px;
 }
 
 .container-center-dashboard{
@@ -8,4 +8,73 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.container-background-dahsboard{
+  min-height: 80vh;
+}
+
+.card-img-dashboard{
+  border-radius: 10px
+}
+
+.ant-card-body {
+  padding: 12px
+}
+
+.float-container {
+  border: 3px solid #fff;
+  padding: 10px;
+}
+
+.float-child {
+  width: 50%;
+  float: left;
+  padding: 10px;
+}  
+
+.txt-info-dashboard{
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.txt-title-dashboard, .txt-date-dashboard {
+  text-align: center;
+  font-weight: 300;
+}
+.txt-date-dashboard{
+  float: right;
+  margin-bottom: 10px;
+}
+
+.txt-title-dashboard{
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.space-top{
+  margin-top: 1.2em;
+}
+
+.border-color-date{
+  height: 35px;
+  margin: 0 auto;
+  font-family: arial, sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  text-transform: uppercase;
+  background-color: #FEFEFE;
+  outline: none;
+  border: 0;
+  border-radius: 3px;
+  padding: 0 3px;
+  border-color: #000000ae;
+  border-width: 1px;
+  color: #000000ae;
+}
+
+
+.txt-label-date{
+  font-weight: 200;
+  font-size: 1em
 }
