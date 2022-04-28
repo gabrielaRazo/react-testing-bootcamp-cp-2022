@@ -1,6 +1,6 @@
 import {render, screen, fireEvent} from '@testing-library/react'
 import moment from 'moment';
-import { Dashboard } from '.';
+import { Dashboard } from './dashboard';
 import { rest } from 'msw';
 import {server} from '../../mocks/server';
 
