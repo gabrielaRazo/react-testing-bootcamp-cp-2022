@@ -60,7 +60,7 @@ export const Dashboard = () => {
         </Col>
         <br/>
         <div class="float-container">
-            <div lg={{span:7, offset:1}} class="float-child">
+            <div lg={{span:7, offset:1}} class="float-child-left">
                     <Spin tip="Cargando imagen..." spinning={fetchingApi}>
                         {pictureDayInfo[0] && unexpectedError === false ? (
                             <Card className='card-img-dashboard'>
@@ -78,7 +78,7 @@ export const Dashboard = () => {
                         }
                     </Spin>
             </div>
-            <div class="float-child">
+            <div class="float-child-right">
                     <div className="space-top"/>
                     {pictureDayInfo[0] && unexpectedError === false &&
                         <span className="txt-info-dashboard">{pictureDayInfo[0].explanation}</span>

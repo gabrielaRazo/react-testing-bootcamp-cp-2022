@@ -11,11 +11,11 @@ export const Header = () => {
       <div className="container-header">
       <div className="top-space-header"/>
       <Row>
-        <Col lg={{span:10, offset:1}}>
+        <Col lg={{span:10, offset:1}} xs={{span:23, offset:1}}>
             <h1 className="txt-title-header">Testing Capstone Project</h1>
         </Col>
-        <Col lg={{span:5, offset:8}}>
-            <a href="https://www.linkedin.com/in/gabriela97/" target="_blank"><LinkedinOutlined className="icon-linkedin"/> <span className="txt-link">Gabriela Razo Roldán</span></a>
+        <Col lg={{span:5, offset:8}} xs={{span:0}}>
+        <a href="https://www.linkedin.com/in/gabriela97/" target="_blank" className="container-link"><LinkedinOutlined className="icon-linkedin" /> <span className="txt-link">Gabriela Razo Roldán</span></a>
         </Col>
       </Row>
            

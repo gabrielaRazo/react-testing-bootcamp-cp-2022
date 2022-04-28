@@ -12,10 +12,10 @@ export const Footer = () => {
       <Divider/>
       <div className="top-space-footer"/>
       <Row>
-        <Col lg={{span:5, offset:19}}>
-            <a href="https://www.linkedin.com/in/gabriela97/" target="_blank"><LinkedinOutlined className="icon-linkedin" /> <span className="txt-link">Gabriela Razo Roldán</span></a>
+        <Col lg={{span:5, offset:19}} xs={{span:23, offset:1}}>
+            <a href="https://www.linkedin.com/in/gabriela97/" target="_blank" className="container-txt"><LinkedinOutlined className="icon-linkedin" /> <span className="txt-link">Gabriela Razo Roldán</span></a>
         </Col>
-        <Col lg={{span:22, offset:1}}>
+        <Col lg={{span:22, offset:1}} xs={{span:23, offset:1}}>
             <p className="txt-footer">Project created during Wizeline Academy React Testing Bootcamp</p>
         </Col>
         <div className="top-space-footer"/>
