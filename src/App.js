@@ -1,7 +1,7 @@
 import './App.css';
-import {Dashboard} from './components/dashboard/dashboard';
-import { Footer } from './components/footer/footer';
-import { Header } from './components/header/header';
+import {Dashboard} from './components/dashboard/Dashboard';
+import { Footer } from './components/footer/Footer';
+import { Header } from './components/header/Header';
 
 function App() {
   return (
