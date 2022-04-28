@@ -1,0 +1,9 @@
+.container-header{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px 0px;
+    height: 60px;
+}
+
+.txt-title-header{
+    font-weight: 200;
+    font-size: 2rem;
+}

@@ -7,6 +7,7 @@ export const Dashboard = () => {
     const [pictureDayInfo, setPictureDayInfo] = useState([])
     const [fetchingApi, setFetchingApi] = useState(true);
     const [erroMsg, setErrorMsg] = useState(false);
+    const [unexpectedError, setUnexpectedError] = useState(false)
     const [date, setDate] = useState(moment(new Date()).format("YYYY-MM-DD"))
 
 
@@ -16,14 +17,18 @@ export const Dashboard = () => {
         }else{
             const apiKey = 'wOjD8BmGH4ZViJyv2OpeZlKfSaA24XkEcvmyipkF';
             let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&start_date=${date}&end_date=${date}`)
+            console.log("entré", response.status)
+            if(response.status!=200){
+                setUnexpectedError(true);
+            }
+            setUnexpectedError(false);
             response = await response.json();
-            console.log(response)
-            setPictureDayInfo(response)
-            setFetchingApi(false)
-            setErrorMsg(false)
+            setPictureDayInfo(response);
+            setFetchingApi(false);
+            setErrorMsg(false);
         }
         
-    }, [date]) // if date changes, useEffect will run again
+    }, [date]) 
     
       useEffect(() => {
         fetchMyAPI()
@@ -55,8 +60,11 @@ export const Dashboard = () => {
         
         <Col span={18} offset={1}>
             <Spin tip="Cargando imagen..." spinning={fetchingApi}>
-            {pictureDayInfo[0] &&
+            {pictureDayInfo[0] && unexpectedError === false ? (
                 <img className="img-dashboard" src={pictureDayInfo[0].url} alt={pictureDayInfo[0].date}/>
+                ) :(
+                    <p>There was an error, please try again.</p>
+                )
             }
             </Spin>
         </Col>

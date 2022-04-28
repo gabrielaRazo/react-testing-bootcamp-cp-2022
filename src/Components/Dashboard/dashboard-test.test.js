@@ -1,6 +1,8 @@
 import {render, screen, fireEvent} from '@testing-library/react'
 import moment from 'moment';
 import { Dashboard } from '.';
+import { rest } from 'msw';
+import {server} from '../../mocks/server';
 
 const setup = () => render(<Dashboard />)
 
@@ -21,7 +23,21 @@ describe('Dashboard', () => {
         expect(input.value).toMatch(regex)
         expect(imgResult).toBeInTheDocument();
     })
-
+    it('the app should show a message: "There was an error, please try again." when the app fetches the API, and there is an unexpected error,', async () => {
+        server.use(
+            rest.get("https://api.nasa.gov/planetary/apod", (req, res, ctx) => {
+              return res.once(
+                ctx.status(500),
+                ctx.json({
+                  error: "error"
+                })
+              );
+            })
+        );
+        setup();
+        const msgUnexError = await screen.getByText(/There was an error, please try again./i);
+        expect(msgUnexError).toBeInTheDocument();
+    })
     it('the app should show a message from the API response when the user selects an invalid date value ', async () => {
         setup()
         const firstMsgError = screen.queryByText(/Date must be between Jun 16, 1995 and Apr 27, 2022./i)
