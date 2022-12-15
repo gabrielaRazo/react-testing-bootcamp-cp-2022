@@ -52,7 +52,7 @@ export const Dashboard = () => {
                             />
                         </Tooltip>
                         {erroMsg === true &&
-                            <p>Date must be between Jun 16, 1995 and Apr 27, 2022.</p>
+                            <p>Date must be between Jun 16, 1995 and {moment(new Date()).format('LL')}</p>
                         }
                     </div>
                 </label>
